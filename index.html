@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Economics & Entrepreneurship — Complete Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1923;
+    --paper: #faf8f3;
+    --cream: #f0ebe0;
+    --accent: #c8392b;
+    --gold: #b8860b;
+    --teal: #1a6b72;
+    --muted: #6b6356;
+    --border: #d4cfc4;
+    --highlight: #fff3cd;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* COVER */
+  .cover {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,.03) 40px, rgba(255,255,255,.03) 41px);
+  }
+  .cover-badge {
+    display: inline-block;
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 6px 18px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 6vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .cover h1 span { color: var(--gold); }
+  .cover-sub {
+    font-size: 18px;
+    color: rgba(250,248,243,0.7);
+    font-style: italic;
+    margin-bottom: 40px;
+  }
+  .cover-meta {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgba(250,248,243,0.5);
+  }
+  .cover-meta span { display: flex; align-items: center; gap: 6px; }
+
+  /* TOC */
+  .toc {
+    background: var(--cream);
+    border-left: 4px solid var(--accent);
+    padding: 40px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .toc h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--accent);
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 6px 30px;
+  }
+  .toc-item {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--muted);
+    padding: 4px 0;
+    border-bottom: 1px dotted var(--border);
+    cursor: pointer;
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+  .toc-item:hover { color: var(--accent); }
+  .toc-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 500;
+    min-width: 30px;
+    padding-top: 2px;
+  }
+
+  /* SECTIONS */
+  .section-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 30px 60px;
+    margin-top: 0;
+  }
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .section-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  /* CONTENT WRAPPER */
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  /* QUESTION BLOCK */
+  .q-block {
+    border-top: 2px solid var(--border);
+    padding: 40px 0;
+  }
+  .q-block:first-of-type { border-top: none; }
+
+  .q-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .q-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: var(--accent);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .q-text {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  .answer { font-size: 15.5px; line-height: 1.85; color: #2a2a2a; }
+  .answer p { margin-bottom: 14px; }
+  .answer h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--teal);
+    margin: 20px 0 8px;
+    border-left: 3px solid var(--teal);
+    padding-left: 12px;
+  }
+  .answer ul, .answer ol { margin: 10px 0 14px 24px; }
+  .answer li { margin-bottom: 6px; }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--highlight);
+    border-left: 4px solid var(--gold);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 15px;
+    font-style: italic;
+  }
+  .callout strong { color: var(--gold); font-style: normal; }
+
+  .key-box {
+    background: #eaf6f6;
+    border: 1.5px solid var(--teal);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 15px;
+  }
+  .key-box strong { color: var(--teal); }
+
+  /* TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  th {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:nth-child(even) td { background: var(--cream); }
+  tr:hover td { background: #e8f4f4; }
+
+  /* CHARTS */
+  .chart-wrap {
+    margin: 28px 0;
+    padding: 24px;
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    text-align: center;
+  }
+  .chart-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  svg text { font-family: 'Source Serif 4', serif; }
+
+  /* PAGE BREAK */
+  @media print {
+    .q-block { page-break-inside: avoid; }
+    .section-header { page-break-before: always; }
+  }
+
+  /* PRINT BUTTON */
+  .print-bar {
+    background: var(--teal);
+    color: white;
+    text-align: center;
+    padding: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .print-bar:hover { background: #145a60; }
+  @media print { .print-bar { display: none; } }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(250,248,243,0.4);
+    text-align: center;
+    padding: 30px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 60px;
+  }
+
+  /* FORMULA */
+  .formula {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--ink);
+    color: var(--gold);
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin: 16px 0;
+    font-size: 14px;
+    display: inline-block;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 16px 0;
+  }
+  .col-box {
+    background: var(--cream);
+    border-radius: 6px;
+    padding: 16px;
+    font-size: 14px;
+  }
+  .col-box h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--teal);
+  }
+  @media(max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="print-bar" onclick="window.print()">📄 Click to Print / Save as PDF</div>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-badge">Complete Exam Preparation Guide</div>
+  <h1>Economics &amp;<br><span>Entrepreneurship</span></h1>
+  <p class="cover-sub">A comprehensive answer guide covering all 24 questions</p>
+  <div class="cover-meta">
+    <span>📚 Economics Fundamentals</span>
+    <span>📈 Market Theory</span>
+    <span>🚀 Entrepreneurship</span>
+  </div>
+</div>
+
+<!-- TOC -->
+<div style="background:var(--cream); padding:40px 0;">
+<div class="toc">
+  <h2>Table of Contents</h2>
+  <div class="toc-grid">
+    <a class="toc-item" href="#q1"><span class="toc-num">Q1</span> Scarcity &amp; Economic Decision-Making</a>
+    <a class="toc-item" href="#q2"><span class="toc-num">Q2</span> Scarcity &amp; Economic Systems</a>
+    <a class="toc-item" href="#q3"><span class="toc-num">Q3</span> "No Free Lunch" — Opportunity Cost</a>
+    <a class="toc-item" href="#q4"><span class="toc-num">Q4</span> Laws of Demand &amp; Supply (with graphs)</a>
+    <a class="toc-item" href="#q5"><span class="toc-num">Q5</span> Shifts in Demand &amp; Supply — Equilibrium</a>
+    <a class="toc-item" href="#q6"><span class="toc-num">Q6</span> Price Mechanism — Invisible Hand</a>
+    <a class="toc-item" href="#q7"><span class="toc-num">Q7</span> Micro vs. Macro Economics</a>
+    <a class="toc-item" href="#q8"><span class="toc-num">Q8</span> Opportunity Cost: Work vs. Study</a>
+    <a class="toc-item" href="#q9"><span class="toc-num">Q9</span> Diminishing Marginal Utility</a>
+    <a class="toc-item" href="#q10"><span class="toc-num">Q10</span> Calculate Equilibrium (Numerical)</a>
+    <a class="toc-item" href="#q11"><span class="toc-num">Q11</span> Factors Causing Shifts in D &amp; S</a>
+    <a class="toc-item" href="#q12"><span class="toc-num">Q12</span> Growth vs. Environment</a>
+    <a class="toc-item" href="#q13"><span class="toc-num">Q13</span> Perfect Competition vs. Monopoly</a>
+    <a class="toc-item" href="#q14"><span class="toc-num">Q14</span> GDP vs. GNP</a>
+    <a class="toc-item" href="#q15"><span class="toc-num">Q15</span> Remittances &amp; Foreign Aid in Bangladesh</a>
+    <a class="toc-item" href="#q16"><span class="toc-num">Q16</span> "Entrepreneurs Are Born, Not Made"</a>
+    <a class="toc-item" href="#q17"><span class="toc-num">Q17</span> Can Entrepreneurship Be Taught?</a>
+    <a class="toc-item" href="#q18"><span class="toc-num">Q18</span> "Problem = Opportunity"</a>
+    <a class="toc-item" href="#q19"><span class="toc-num">Q19</span> Feasibility Study for Eco-Friendly Product</a>
+    <a class="toc-item" href="#q20"><span class="toc-num">Q20</span> Brainstorming &amp; Design Thinking</a>
+    <a class="toc-item" href="#q21"><span class="toc-num">Q21</span> Why Innovative Ideas Fail</a>
+    <a class="toc-item" href="#q22"><span class="toc-num">Q22</span> Business Model for a Social Startup</a>
+    <a class="toc-item" href="#q23"><span class="toc-num">Q23</span> Five Principles of Effectuation</a>
+    <a class="toc-item" href="#q24"><span class="toc-num">Q24</span> Food Delivery App — IP Assets</a>
+    <a class="toc-item" href="#q25"><span class="toc-num">Q25</span> Lemonade Principle — Turning Disruption</a>
+  </div>
+</div>
+</div>
+
+<!-- ========== SECTION 1: ECONOMICS ========== -->
+<div class="section-header">
+  <h2>Section One</h2>
+  <h3>Foundations of Economics</h3>
+</div>
+
+<div class="content">
+
+<!-- Q1 -->
+<div class="q-block" id="q1">
+  <div class="q-label">
+    <span class="q-num">Q 01</span>
+    <span class="q-text">How does the concept of scarcity influence economic decision-making across individuals, firms, and governments?</span>
+  </div>
+  <div class="answer">
+    <p><strong>Scarcity</strong> is the fundamental economic problem — it arises because human wants are unlimited, yet the resources available to satisfy those wants (land, labour, capital, entrepreneurship) are finite. Scarcity forces every economic agent to make choices.</p>
+    <h4>At the Individual Level</h4>
+    <p>Individuals face a limited budget and limited time. Every decision involves trade-offs. A student must choose between studying and working; a household must decide between saving and spending. Scarcity compels individuals to <em>prioritise</em> needs over wants and to consider the <strong>opportunity cost</strong> of every choice — what is given up when one option is chosen over another.</p>
+    <h4>At the Firm Level</h4>
+    <p>Firms have scarce capital, labour, and raw materials. They must decide <em>what</em> to produce, <em>how</em> to produce it most efficiently, and <em>for whom</em>. Scarcity drives firms to minimise waste, adopt cost-effective technology, and prioritise profitable product lines over less lucrative ones. It also stimulates innovation — firms seek new ways to do more with less.</p>
+    <h4>At the Government Level</h4>
+    <p>Governments face finite tax revenue and must allocate budgets across education, healthcare, defence, and infrastructure. Scarcity forces governments to rank national priorities and make policies about resource allocation — e.g., Bangladesh must choose between spending on flood defences versus industrialisation.</p>
+    <div class="callout"><strong>Key Insight:</strong> Scarcity is the root cause of all economic activity. Without it, there would be no need for economics as a discipline.</div>
+    <h4>The Three Fundamental Questions Arising from Scarcity</h4>
+    <ul>
+      <li><strong>What to produce?</strong> — Choosing which goods and services to create</li>
+      <li><strong>How to produce?</strong> — Deciding on the most efficient production method</li>
+      <li><strong>For whom to produce?</strong> — Determining who receives the output</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="q-block" id="q2">
+  <div class="q-label">
+    <span class="q-num">Q 02</span>
+    <span class="q-text">Discuss how the problem of scarcity leads to the need for an economic system. Which system best addresses this issue — capitalism, socialism, or mixed?</span>
+  </div>
+  <div class="answer">
+    <p>Because resources are scarce, every society needs a <strong>system</strong> to answer the three fundamental questions (what, how, for whom). Without a system, resource allocation would be chaotic and inefficient.</p>
+    <div class="two-col">
+      <div class="col-box">
+        <h5>Capitalism (Free Market)</h5>
+        <ul>
+          <li>Private ownership of resources</li>
+          <li>Price mechanism allocates resources</li>
+          <li>Profit motive drives efficiency</li>
+          <li><em>Weakness:</em> Market failures, inequality</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <h5>Socialism (Command Economy)</h5>
+        <ul>
+          <li>State owns &amp; plans resources</li>
+          <li>Central authority decides production</li>
+          <li>Equality focused</li>
+          <li><em>Weakness:</em> Inefficiency, lack of incentives</li>
+        </ul>
+      </div>
+    </div>
+    <h4>The Mixed Economy — Best Solution</h4>
+    <p>A <strong>mixed economy</strong> combines the strengths of both systems and is generally considered the most effective approach to scarcity. Most developed and developing nations — including Bangladesh — operate mixed economies.</p>
+    <ul>
+      <li>The <strong>private sector</strong> handles most production efficiently through market forces.</li>
+      <li>The <strong>government</strong> intervenes to correct market failures (e.g., public goods like roads, externalities like pollution).</li>
+      <li>Social safety nets prevent extreme inequality.</li>
+      <li>Regulations ensure fair competition.</li>
+    </ul>
+    <div class="callout"><strong>Conclusion:</strong> The mixed economy best addresses scarcity because it harnesses market efficiency while using state intervention to ensure equity and correct failures that pure capitalism ignores.</div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="q-block" id="q3">
+  <div class="q-label">
+    <span class="q-num">Q 03</span>
+    <span class="q-text">"There is no such thing as a free lunch." — Analyse using opportunity cost and resource allocation.</span>
+  </div>
+  <div class="answer">
+    <p>This famous statement by economist Milton Friedman captures the essence of <strong>opportunity cost</strong> — the value of the next best alternative forgone whenever a choice is made.</p>
+    <h4>What Does It Mean?</h4>
+    <p>Even if something appears to be "free," someone, somewhere pays a cost. Resources used to provide the "free" item could have been used for something else — that forgone alternative is the true cost.</p>
+    <h4>Opportunity Cost Explained</h4>
+    <p>Opportunity cost is not just about money. It includes time, effort, and resources. If a government provides free education, the cost is borne by taxpayers. If a company offers a free trial, the cost is the resources spent developing that offer — plus the revenue not earned during the trial period.</p>
+    <h4>Resource Allocation Dimension</h4>
+    <p>Resources are scarce. Every unit of land, labour, or capital deployed for one purpose is unavailable for another. A farmer who grows wheat cannot simultaneously grow rice on the same plot. A hospital that builds a new wing sacrifices the same funds from other departments. This is <strong>resource allocation</strong> — the process of distributing limited resources among competing uses.</p>
+    <div class="callout"><strong>Example:</strong> A student attends a "free" university lecture. The real cost is the hours she could have spent working part-time (foregone income) or resting (foregone leisure). The lecture is not free — it costs her time, which is scarce.</div>
+    <h4>Production Possibility Frontier (PPF)</h4>
+    <p>The PPF illustrates this concept graphically. Moving resources from producing Good A to Good B shows the opportunity cost — the sacrifice of A is the real price of more B. There is no point on the PPF where producing more of one good does not cost some amount of the other.</p>
+    <div class="key-box"><strong>Conclusion:</strong> The statement is a powerful reminder that all economic decisions involve trade-offs. Scarcity ensures that nothing is truly costless — every resource allocation has an opportunity cost.</div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<!-- ========== SECTION 2: DEMAND, SUPPLY & EQUILIBRIUM ========== -->
+<div class="section-header">
+  <h2>Section Two</h2>
+  <h3>Demand, Supply &amp; Market Equilibrium</h3>
+</div>
+
+<div class="content">
+
+<!-- Q4 -->
+<div class="q-block" id="q4">
+  <div class="q-label">
+    <span class="q-num">Q 04</span>
+    <span class="q-text">How do changes in price affect demand and supply in the market? Draw and demonstrate the laws of demand and supply.</span>
+  </div>
+  <div class="answer">
+    <h4>Law of Demand</h4>
+    <p><em>Ceteris paribus</em> (all else equal), as the price of a good rises, the quantity demanded falls; as the price falls, the quantity demanded rises. This inverse relationship exists because of the <strong>substitution effect</strong> (consumers switch to cheaper alternatives) and the <strong>income effect</strong> (higher price reduces real purchasing power).</p>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Law of Demand — Demand Curve (Downward Sloping)</div>
+      <svg viewBox="0 0 480 340" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="60" y1="20" x2="60" y2="290" stroke="#0f1923" stroke-width="2"/>
+        <line x1="60" y1="290" x2="440" y2="290" stroke="#0f1923" stroke-width="2"/>
+        <!-- Arrow heads -->
+        <polygon points="60,14 55,26 65,26" fill="#0f1923"/>
+        <polygon points="446,290 434,285 434,295" fill="#0f1923"/>
+        <!-- Axis Labels -->
+        <text x="240" y="320" text-anchor="middle" font-size="14" fill="#0f1923" font-weight="bold">Quantity Demanded (Q)</text>
+        <text x="22" y="160" text-anchor="middle" font-size="14" fill="#0f1923" font-weight="bold" transform="rotate(-90,22,160)">Price (P)</text>
+        <!-- Demand Curve D -->
+        <path d="M 90,50 Q 250,170 420,280" stroke="#c8392b" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <text x="425" y="278" font-size="16" fill="#c8392b" font-weight="bold">D</text>
+        <!-- Price lines + points -->
+        <line x1="60" y1="100" x2="175" y2="100" stroke="#888" stroke-dasharray="5,4" stroke-width="1"/>
+        <line x1="175" y1="100" x2="175" y2="290" stroke="#888" stroke-dasharray="5,4" stroke-width="1"/>
+        <line x1="60" y1="210" x2="330" y2="210" stroke="#888" stroke-dasharray="5,4" stroke-width="1"/>
+        <line x1="330" y1="210" x2="330" y2="290" stroke="#888" stroke-dasharray="5,4" stroke-width="1"/>
+        <!-- Points -->
+        <circle cx="175" cy="100" r="6" fill="#c8392b"/>
+        <circle cx="330" cy="210" r="6" fill="#c8392b"/>
+        <!-- Labels -->
+        <text x="50" y="104" text-anchor="end" font-size="13" fill="#0f1923">P₁</text>
+        <text x="50" y="214" text-anchor="end" font-size="13" fill="#0f1923">P₂</text>
+        <text x="175" y="306" text-anchor="middle" font-size="13" fill="#0f1923">Q₁</text>
+        <text x="330" y="306" text-anchor="middle" font-size="13" fill="#0f1923">Q₂</text>
+        <!-- Arrow showing direction -->
+        <text x="200" y="150" font-size="13" fill="#c8392b">P↑ → Q↓</text>
+        <text x="200" y="168" font-size="13" fill="#1a6b72">P↓ → Q↑</text>
+        <text x="50" y="18" font-size="12" fill="#555">P</text>
+        <text x="446" y="294" font-size="12" fill="#555">Q</text>
+      </svg>
+    </div>
+
+    <h4>Law of Supply</h4>
+    <p><em>Ceteris paribus</em>, as the price of a good rises, the quantity supplied increases; as price falls, quantity supplied decreases. This positive relationship exists because higher prices make production more profitable, incentivising producers to supply more.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Law of Supply — Supply Curve (Upward Sloping)</div>
+      <svg viewBox="0 0 480 340" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="60" y1="20" x2="60" y2="290" stroke="#0f1923" stroke-width="2"/>
+        <line x1="60" y1="290" x2="440" y2="290" stroke="#0f1923" stroke-width="2"/>
+        <polygon points="60,14 55,26 65,26" fill="#0f1923"/>
+        <polygon points="446,290 434,285 434,295" fill="#0f1923"/>
+        <text x="240" y="320" text-anchor="middle" font-size="14" fill="#0f1923" font-weight="bold">Quantity Supplied (Q)</text>
+        <text x="22" y="160" text-anchor="middle" font-size="14" fill="#0f1923" font-weight="bold" transform="rotate(-90,22,160)">Price (P)</text>
+        <!-- Supply Curve S -->
+        <path d="M 100,280 Q 230,170 400,60" stroke="#1a6b72" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <text x="404" y="58" font-size="16" fill="#1a6b72" font-weight="bold">S</text>
+        <!-- Dashed lines -->
+        <line x1="60" y1="100" x2="365" y2="100" stroke="#888" stroke-dasharray="5,4" stroke-width="1"/>
+        <line x1="365" y1="100" x2="365" y2="290" stroke="#888" stroke-dasharray="5,4" stroke-width="1"/>
+        <line x1="60" y1="210" x2="175" y2="210" stroke="#888" stroke-dasharray="5,4" stroke-width="1"/>
+        <line x1="175" y1="210" x2="175" y2="290" stroke="#888" stroke-dasharray="5,4" stroke-width="1"/>
+        <!-- Points -->
+        <circle cx="365" cy="100" r="6" fill="#1a6b72"/>
+        <circle cx="175" cy="210" r="6" fill="#1a6b72"/>
+        <!-- Labels -->
+        <text x="50" y="104" text-anchor="end" font-size="13" fill="#0f1923">P₂</text>
+        <text x="50" y="214" text-anchor="end" font-size="13" fill="#0f1923">P₁</text>
+        <text x="365" y="306" text-anchor="middle" font-size="13" fill="#0f1923">Q₂</text>
+        <text x="175" y="306" text-anchor="middle" font-size="13" fill="#0f1923">Q₁</text>
+        <text x="200" y="150" font-size="13" fill="#1a6b72">P↑ → Q↑</text>
+        <text x="200" y="168" font-size="13" fill="#c8392b">P↓ → Q↓</text>
+      </svg>
+    </div>
+
+    <h4>Combined Demand &amp; Supply — Market Equilibrium</h4>
+    <p>When plotted together, the demand and supply curves intersect at the <strong>equilibrium point (E)</strong>, where quantity demanded equals quantity supplied and the market clears.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Market Equilibrium — D and S Intersection</div>
+      <svg viewBox="0 0 480 340" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <line x1="60" y1="20" x2="60" y2="290" stroke="#0f1923" stroke-width="2"/>
+        <line x1="60" y1="290" x2="440" y2="290" stroke="#0f1923" stroke-width="2"/>
+        <polygon points="60,14 55,26 65,26" fill="#0f1923"/>
+        <polygon points="446,290 434,285 434,295" fill="#0f1923"/>
+        <text x="240" y="320" text-anchor="middle" font-size="14" fill="#0f1923" font-weight="bold">Quantity (Q)</text>
+        <text x="22" y="160" text-anchor="middle" font-size="14" fill="#0f1923" font-weight="bold" transform="rotate(-90,22,160)">Price (P)</text>
+        <!-- Demand Curve -->
+        <path d="M 90,50 Q 260,175 420,275" stroke="#c8392b" stroke-width="2.5" fill="none"/>
+        <text x="424" y="273" font-size="15" fill="#c8392b" font-weight="bold">D</text>
+        <!-- Supply Curve -->
+        <path d="M 100,280 Q 240,175 390,55" stroke="#1a6b72" stroke-width="2.5" fill="none"/>
+        <text x="393" y="53" font-size="15" fill="#1a6b72" font-weight="bold">S</text>
+        <!-- Equilibrium approx at (245,170) -->
+        <line x1="60" y1="168" x2="245" y2="168" stroke="#b8860b" stroke-dasharray="6,4" stroke-width="1.5"/>
+        <line x1="245" y1="168" x2="245" y2="290" stroke="#b8860b" stroke-dasharray="6,4" stroke-width="1.5"/>
+        <circle cx="245" cy="168" r="8" fill="#b8860b" stroke="white" stroke-width="2"/>
+        <text x="258" y="162" font-size="13" fill="#b8860b" font-weight="bold">E (Equilibrium)</text>
+        <text x="50" y="172" text-anchor="end" font-size="13" fill="#b8860b" font-weight="bold">P*</text>
+        <text x="245" y="306" text-anchor="middle" font-size="13" fill="#b8860b" font-weight="bold">Q*</text>
+        <!-- Surplus/Shortage labels -->
+        <text x="130" y="120" font-size="11" fill="#c8392b">Shortage area</text>
+        <text x="290" y="220" font-size="11" fill="#1a6b72">Surplus area</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="q-block" id="q5">
+  <div class="q-label">
+    <span class="q-num">Q 05</span>
+    <span class="q-text">Evaluate how shifts in demand and supply influence equilibrium price and quantity.</span>
+  </div>
+  <div class="answer">
+    <p>A <strong>shift</strong> in the demand or supply curve (as opposed to a movement along it) occurs when a non-price factor changes. This moves the equilibrium to a new point.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Increase in Demand — D shifts right → Higher P* and Q*</div>
+      <svg viewBox="0 0 500 320" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <line x1="60" y1="20" x2="60" y2="280" stroke="#0f1923" stroke-width="2"/>
+        <line x1="60" y1="280" x2="460" y2="280" stroke="#0f1923" stroke-width="2"/>
+        <polygon points="60,14 55,26 65,26" fill="#0f1923"/>
+        <polygon points="466,280 454,275 454,285" fill="#0f1923"/>
+        <text x="260" y="308" text-anchor="middle" font-size="13" fill="#0f1923" font-weight="bold">Quantity (Q)</text>
+        <text x="20" y="150" text-anchor="middle" font-size="13" fill="#0f1923" font-weight="bold" transform="rotate(-90,20,150)">Price (P)</text>
+        <!-- Supply -->
+        <path d="M 90,270 Q 240,165 390,50" stroke="#1a6b72" stroke-width="2.5" fill="none"/>
+        <text x="393" y="48" font-size="14" fill="#1a6b72" font-weight="bold">S</text>
+        <!-- Old Demand D1 -->
+        <path d="M 90,50 Q 230,165 400,270" stroke="#c8392b" stroke-width="2" fill="none" stroke-dasharray="6,3"/>
+        <text x="404" y="268" font-size="13" fill="#c8392b">D₁</text>
+        <!-- New Demand D2 shifted right -->
+        <path d="M 145,50 Q 285,165 450,265" stroke="#c8392b" stroke-width="2.5" fill="none"/>
+        <text x="453" y="263" font-size="13" fill="#c8392b" font-weight="bold">D₂</text>
+        <!-- Old Eq approx (235,165) -->
+        <circle cx="235" cy="165" r="5" fill="#888"/>
+        <text x="218" y="158" font-size="11" fill="#555">E₁</text>
+        <line x1="60" y1="165" x2="235" y2="165" stroke="#888" stroke-dasharray="4,3" stroke-width="1"/>
+        <line x1="235" y1="165" x2="235" y2="280" stroke="#888" stroke-dasharray="4,3" stroke-width="1"/>
+        <!-- New Eq approx (290,125) -->
+        <circle cx="295" cy="120" r="7" fill="#b8860b" stroke="white" stroke-width="2"/>
+        <text x="305" y="115" font-size="11" fill="#b8860b" font-weight="bold">E₂</text>
+        <line x1="60" y1="120" x2="295" y2="120" stroke="#b8860b" stroke-dasharray="4,3" stroke-width="1.5"/>
+        <line x1="295" y1="120" x2="295" y2="280" stroke="#b8860b" stroke-dasharray="4,3" stroke-width="1.5"/>
+        <text x="50" y="169" text-anchor="end" font-size="11" fill="#555">P₁*</text>
+        <text x="50" y="124" text-anchor="end" font-size="11" fill="#b8860b">P₂*</text>
+        <text x="235" y="294" text-anchor="middle" font-size="11" fill="#555">Q₁*</text>
+        <text x="295" y="294" text-anchor="middle" font-size="11" fill="#b8860b">Q₂*</text>
+        <!-- Arrow -->
+        <path d="M 250,220 L 290,220" stroke="#c8392b" stroke-width="2" marker-end="url(#arr)"/>
+        <text x="252" y="235" font-size="11" fill="#c8392b">D shifts right</text>
+        <defs>
+          <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#c8392b"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+
+    <h4>Summary of Shift Effects</h4>
+    <table>
+      <thead>
+        <tr><th>Shift</th><th>Effect on P*</th><th>Effect on Q*</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Demand increases (rightward)</td><td>Rises ↑</td><td>Rises ↑</td></tr>
+        <tr><td>Demand decreases (leftward)</td><td>Falls ↓</td><td>Falls ↓</td></tr>
+        <tr><td>Supply increases (rightward)</td><td>Falls ↓</td><td>Rises ↑</td></tr>
+        <tr><td>Supply decreases (leftward)</td><td>Rises ↑</td><td>Falls ↓</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><strong>Key Principle:</strong> Shifts in demand and supply disturb the original equilibrium and force the market to find a new one — a process called <em>market adjustment</em>.</div>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="q-block" id="q6">
+  <div class="q-label">
+    <span class="q-num">Q 06</span>
+    <span class="q-text">How does the price mechanism act as an invisible hand in achieving equilibrium in a free market?</span>
+  </div>
+  <div class="answer">
+    <p>Adam Smith, in <em>The Wealth of Nations</em> (1776), described the <strong>invisible hand</strong> — the idea that individuals pursuing their own self-interest are guided by market forces (prices) to promote the overall welfare of society, without any central direction.</p>
+    <h4>How the Price Mechanism Works</h4>
+    <ul>
+      <li><strong>Price as a Signal:</strong> Rising prices signal that a good is scarce and valued highly. Falling prices signal a surplus. These signals guide producers and consumers to adjust behaviour.</li>
+      <li><strong>Price as an Incentive:</strong> High prices incentivise firms to produce more and attract new entrants. Low prices incentivise consumers to buy more.</li>
+      <li><strong>Price as a Rationing Device:</strong> Prices ration scarce goods to those most willing and able to pay.</li>
+    </ul>
+    <h4>Achieving Equilibrium Automatically</h4>
+    <p>When there is a <strong>shortage</strong> (Qd &gt; Qs), prices rise. Higher prices reduce demand and increase supply until equilibrium is restored. When there is a <strong>surplus</strong> (Qs &gt; Qd), prices fall. Lower prices stimulate demand and reduce supply until the market clears.</p>
+    <div class="key-box">
+      <strong>Example:</strong> During the COVID-19 pandemic, demand for masks surged. The price mechanism immediately signalled producers to manufacture more — without any government instruction. Prices rose temporarily, which rationed the scarce supply and incentivised production. This is the invisible hand at work.
+    </div>
+    <h4>Limitations of the Invisible Hand</h4>
+    <p>The mechanism fails in cases of <em>market failures</em>: public goods (no price can be set), externalities (pollution costs not captured in price), monopolies (price distortion), and information asymmetry. These cases justify government intervention.</p>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="q-block" id="q7">
+  <div class="q-label">
+    <span class="q-num">Q 07</span>
+    <span class="q-text">Critically evaluate how microeconomic and macroeconomic perspectives complement each other in explaining overall economic behaviour.</span>
+  </div>
+  <div class="answer">
+    <div class="two-col">
+      <div class="col-box">
+        <h5>Microeconomics</h5>
+        <p>Studies <em>individual</em> units — households, firms, specific markets. Analyses price determination, consumer behaviour, production decisions, and market structures.</p>
+      </div>
+      <div class="col-box">
+        <h5>Macroeconomics</h5>
+        <p>Studies the <em>economy as a whole</em> — GDP, inflation, unemployment, monetary policy, fiscal policy, economic growth, and international trade.</p>
+      </div>
+    </div>
+    <h4>How They Complement Each Other</h4>
+    <p>Micro and macro are not contradictory — they are <strong>two levels of analysis</strong> of the same economy:</p>
+    <ul>
+      <li><strong>Foundation:</strong> Macro aggregates are built from micro decisions. National consumption (a macro variable) is the sum of millions of individual consumer choices (micro). Inflation results from aggregate pricing decisions by individual firms.</li>
+      <li><strong>Policy Design:</strong> A government designing a minimum wage policy (macro: reducing poverty) must use micro analysis to predict how firms will respond (employment changes, production costs).</li>
+      <li><strong>Understanding Business Cycles:</strong> A recession (macro) reduces individual incomes, which shifts household demand curves leftward (micro), which reduces firm revenues, causing layoffs — a feedback loop connecting both.</li>
+    </ul>
+    <div class="callout"><strong>Critical Note:</strong> The "fallacy of composition" — what is true at the micro level may not hold at the macro level. If one firm cuts wages, it benefits; if all firms do so simultaneously, aggregate demand collapses (macro). This is why both perspectives are essential.</div>
+  </div>
+</div>
+
+<!-- Q8 -->
+<div class="q-block" id="q8">
+  <div class="q-label">
+    <span class="q-num">Q 08</span>
+    <span class="q-text">Use the concept of opportunity cost to explain whether a student should work part-time or study full-time.</span>
+  </div>
+  <div class="answer">
+    <p>This is a classic opportunity cost dilemma. The student cannot fully do both simultaneously, so choosing one means forgoing the benefits of the other.</p>
+    <h4>Option A: Study Full-Time</h4>
+    <ul>
+      <li><strong>Benefits:</strong> Higher academic performance, better degree classification, more time for internships, extra-curricular activities, and networking.</li>
+      <li><strong>Opportunity Cost:</strong> Forgone part-time income, work experience, and financial independence.</li>
+    </ul>
+    <h4>Option B: Work Part-Time</h4>
+    <ul>
+      <li><strong>Benefits:</strong> Immediate income, practical work experience, financial independence, reduced student debt.</li>
+      <li><strong>Opportunity Cost:</strong> Lower grades, less study time, reduced academic development, potentially a weaker degree.</li>
+    </ul>
+    <h4>Economic Analysis</h4>
+    <p>The decision depends on <strong>individual circumstances</strong>. Economically, the student should compare the <em>present value of future returns</em> from a stronger degree (from full-time study) against the <em>immediate utility</em> of part-time earnings.</p>
+    <div class="callout"><strong>Recommendation:</strong> For most students — especially in fields like medicine, engineering, or law — the long-run returns on full-time academic focus outweigh short-run part-time income. However, if financial pressure is acute, a <em>limited</em> part-time commitment (10–15 hrs/week) can balance both without sacrificing grades significantly. The key is minimising opportunity cost, not eliminating it.</div>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="q-block" id="q9">
+  <div class="q-label">
+    <span class="q-num">Q 09</span>
+    <span class="q-text">Apply the law of diminishing marginal utility to explain consumer choices in daily life.</span>
+  </div>
+  <div class="answer">
+    <p>The <strong>Law of Diminishing Marginal Utility (DMU)</strong> states that as a consumer consumes more units of a good, the additional satisfaction (marginal utility) gained from each successive unit decreases, all else equal.</p>
+    <table>
+      <thead>
+        <tr><th>Units of Biryani Consumed</th><th>Total Utility (utils)</th><th>Marginal Utility (utils)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1st plate</td><td>50</td><td>50</td></tr>
+        <tr><td>2nd plate</td><td>85</td><td>35</td></tr>
+        <tr><td>3rd plate</td><td>105</td><td>20</td></tr>
+        <tr><td>4th plate</td><td>110</td><td>5</td></tr>
+        <tr><td>5th plate</td><td>108</td><td>-2 (disutility)</td></tr>
+      </tbody>
+    </table>
+    <h4>Daily Life Applications</h4>
+    <ul>
+      <li><strong>Food:</strong> The first bite of cake is delightful; by the fifth slice, satisfaction collapses — explaining why people stop eating.</li>
+      <li><strong>Entertainment:</strong> Watching the first episode of a series is exciting; by the tenth consecutive hour, the experience feels exhausting.</li>
+      <li><strong>Shopping:</strong> A shopper buys the first pair of shoes with great enthusiasm; additional pairs add less and less satisfaction per unit of money spent.</li>
+      <li><strong>Water:</strong> The first glass of water when very thirsty is extremely satisfying; the fifth glass adds little utility. This also explains why water (despite being essential) has a low price in normal circumstances.</li>
+    </ul>
+    <h4>Link to Consumer Demand</h4>
+    <p>DMU is the foundation of the downward-sloping demand curve. Because marginal utility falls with consumption, consumers will only buy additional units at progressively lower prices — hence the inverse relationship between price and quantity demanded.</p>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="q-block" id="q10">
+  <div class="q-label">
+    <span class="q-num">Q 10</span>
+    <span class="q-text">Calculate the equilibrium price and quantity from given demand and supply data.</span>
+  </div>
+  <div class="answer">
+    <p>Using standard demand and supply functions:</p>
+    <div class="formula">Demand: Qd = 100 − 5P &nbsp;&nbsp;|&nbsp;&nbsp; Supply: Qs = 10 + 3P</div>
+    <h4>Step-by-Step Calculation</h4>
+    <p>At equilibrium, Qd = Qs:</p>
+    <div class="formula">100 − 5P = 10 + 3P</div>
+    <div class="formula">100 − 10 = 3P + 5P</div>
+    <div class="formula">90 = 8P &nbsp;→&nbsp; P* = 90/8 = 11.25</div>
+    <p>Now substitute P* back to find Q*:</p>
+    <div class="formula">Q* = 100 − 5(11.25) = 100 − 56.25 = <strong>43.75</strong></div>
+    <div class="key-box"><strong>Equilibrium Price (P*) = 11.25 &nbsp;|&nbsp; Equilibrium Quantity (Q*) = 43.75</strong></div>
+    <h4>Verification Table</h4>
+    <table>
+      <thead><tr><th>Price (P)</th><th>Qd = 100−5P</th><th>Qs = 10+3P</th><th>Market Condition</th></tr></thead>
+      <tbody>
+        <tr><td>5</td><td>75</td><td>25</td><td>Shortage (Qd &gt; Qs)</td></tr>
+        <tr><td>8</td><td>60</td><td>34</td><td>Shortage</td></tr>
+        <tr><td>11.25</td><td>43.75</td><td>43.75</td><td><strong>Equilibrium ✓</strong></td></tr>
+        <tr><td>15</td><td>25</td><td>55</td><td>Surplus (Qs &gt; Qd)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Q11 -->
+<div class="q-block" id="q11">
+  <div class="q-label">
+    <span class="q-num">Q 11</span>
+    <span class="q-text">Examine the factors causing shifts in demand and supply.</span>
+  </div>
+  <div class="answer">
+    <h4>Factors Shifting the Demand Curve</h4>
+    <table>
+      <thead><tr><th>Factor</th><th>Effect on Demand</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Income ↑</td><td>Normal goods: D shifts right</td><td>More income → more smartphone purchases</td></tr>
+        <tr><td>Price of substitute ↑</td><td>D for this good shifts right</td><td>Tea price ↑ → more coffee demanded</td></tr>
+        <tr><td>Price of complement ↑</td><td>D for this good shifts left</td><td>Petrol ↑ → fewer cars demanded</td></tr>
+        <tr><td>Consumer tastes/preferences ↑</td><td>D shifts right</td><td>Trend for organic food → demand rises</td></tr>
+        <tr><td>Population ↑</td><td>D shifts right</td><td>More people → more food demand</td></tr>
+        <tr><td>Expectations of price rise</td><td>D shifts right now</td><td>Inflation fear → buy more today</td></tr>
+      </tbody>
+    </table>
+    <h4>Factors Shifting the Supply Curve</h4>
+    <table>
+      <thead><tr><th>Factor</th><th>Effect on Supply</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Technology improvement</td><td>S shifts right</td><td>Automation reduces cost → more supplied</td></tr>
+        <tr><td>Input/resource cost ↓</td><td>S shifts right</td><td>Cheaper steel → more cars produced</td></tr>
+        <tr><td>Number of producers ↑</td><td>S shifts right</td><td>New firms enter → total supply increases</td></tr>
+        <tr><td>Government subsidy</td><td>S shifts right</td><td>Subsidy on fertilizer → more crops supplied</td></tr>
+        <tr><td>Natural disaster / bad weather</td><td>S shifts left</td><td>Flood destroys rice harvest</td></tr>
+        <tr><td>Tax on producers ↑</td><td>S shifts left</td><td>VAT increase → less profitable to supply</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Q12 -->
+<div class="q-block" id="q12">
+  <div class="q-label">
+    <span class="q-num">Q 12</span>
+    <span class="q-text">Should developing countries prioritise economic growth over environmental protection? Justify using economic reasoning.</span>
+  </div>
+  <div class="answer">
+    <p>This is one of the central dilemmas of development economics. The answer requires weighing short-run economic gains against long-run environmental sustainability.</p>
+    <h4>Arguments FOR Prioritising Economic Growth</h4>
+    <ul>
+      <li><strong>Poverty Alleviation:</strong> In countries like Bangladesh, millions live below the poverty line. Economic growth generates employment, raises incomes, and improves living standards urgently.</li>
+      <li><strong>Environmental Kuznets Curve (EKC):</strong> This economic theory suggests that environmental degradation first increases with income growth but then decreases once income reaches a threshold — richer nations can afford cleaner technology.</li>
+      <li><strong>Historical Precedent:</strong> Today's developed nations (USA, UK) industrialised without environmental constraints. They now fund environmental technology. Some argue developing countries deserve the same opportunity.</li>
+    </ul>
+    <h4>Arguments AGAINST — Environmental Protection Must Be Integrated</h4>
+    <ul>
+      <li><strong>Negative Externalities:</strong> Industrial pollution, deforestation, and carbon emissions impose costs on future generations — a classic market failure not priced into growth figures.</li>
+      <li><strong>Climate Vulnerability:</strong> Bangladesh is among the world's most climate-vulnerable nations. Rising seas and extreme weather threaten the agricultural sector (15% of GDP). Environmental neglect today could devastate growth tomorrow.</li>
+      <li><strong>Sustainable Development Goals (SDGs):</strong> Global consensus now recognises that growth <em>without</em> environmental sustainability is not genuine development.</li>
+    </ul>
+    <div class="callout"><strong>Balanced Conclusion:</strong> Developing countries should pursue <em>green growth</em> — a model where economic development and environmental protection reinforce each other. Investing in renewable energy, sustainable agriculture, and eco-tourism can simultaneously grow the economy and protect the environment. The false dichotomy of "growth OR environment" must be rejected.</div>
+  </div>
+</div>
+
+<!-- Q13 -->
+<div class="q-block" id="q13">
+  <div class="q-label">
+    <span class="q-num">Q 13</span>
+    <span class="q-text">Compare and contrast pricing and output decisions under perfect competition and monopoly. Which better serves consumers?</span>
+  </div>
+  <div class="answer">
+    <table>
+      <thead>
+        <tr><th>Feature</th><th>Perfect Competition</th><th>Monopoly</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Number of firms</td><td>Many (infinite)</td><td>One</td></tr>
+        <tr><td>Price setting</td><td>Price taker (P = MC)</td><td>Price maker (P &gt; MC)</td></tr>
+        <tr><td>Output level</td><td>Socially optimal (higher Q)</td><td>Restricted (lower Q)</td></tr>
+        <tr><td>Price level</td><td>Lower (competitive)</td><td>Higher (monopoly premium)</td></tr>
+        <tr><td>Profit (long run)</td><td>Normal profit only</td><td>Supernormal (economic) profit</td></tr>
+        <tr><td>Efficiency</td><td>Allocatively &amp; productively efficient</td><td>Allocatively inefficient</td></tr>
+        <tr><td>Innovation incentive</td><td>Low (price = MC)</td><td>Higher (profit funds R&amp;D)</td></tr>
+        <tr><td>Consumer surplus</td><td>Maximum</td><td>Reduced (deadweight loss)</td></tr>
+      </tbody>
+    </table>
+    <h4>Graphical Contrast: Monopoly Deadweight Loss</h4>
+    <p>Under monopoly, the firm produces where MR = MC (not P = MC). This results in a higher price (Pm) and lower output (Qm) compared to the competitive outcome (Pc, Qc), creating a <strong>deadweight welfare loss</strong> — a permanent loss of consumer and producer surplus to society.</p>
+    <h4>Which Better Serves Consumers?</h4>
+    <p><strong>Perfect competition</strong> is theoretically better for consumers — lower prices, higher output, no deadweight loss, and allocative efficiency. However, in practice, monopolies can sometimes be justified: <em>natural monopolies</em> (utilities like electricity) benefit from economies of scale; and monopoly profits can fund R&amp;D leading to innovation that helps consumers long-term (e.g., pharmaceutical patents).</p>
+    <div class="callout"><strong>Conclusion:</strong> Perfect competition serves consumers better in static efficiency terms. But monopoly can be welfare-enhancing when innovation and scale economies are paramount — hence the need for careful regulation rather than blanket prohibition.</div>
+  </div>
+</div>
+
+<!-- Q14 -->
+<div class="q-block" id="q14">
+  <div class="q-label">
+    <span class="q-num">Q 14</span>
+    <span class="q-text">How do GDP and GNP differ in capturing the true income of a nation? Which measure better represents national welfare?</span>
+  </div>
+  <div class="answer">
+    <div class="formula">GDP = Total value of goods &amp; services produced within a country's borders</div>
+    <div class="formula">GNP = GDP + Net Factor Income from Abroad (NFIA)</div>
+    <p>Where: <strong>NFIA = Income earned by residents abroad − Income earned by foreigners in the country</strong></p>
+    <table>
+      <thead>
+        <tr><th>Dimension</th><th>GDP</th><th>GNP</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Focus</td><td>Geographic territory</td><td>Nationality of residents</td></tr>
+        <tr><td>Includes foreign firms</td><td>Yes (if located domestically)</td><td>No</td></tr>
+        <tr><td>Includes diaspora income</td><td>No</td><td>Yes</td></tr>
+        <tr><td>Best for</td><td>Measuring domestic production</td><td>Measuring residents' income</td></tr>
+      </tbody>
+    </table>
+    <h4>Which Better Represents National Welfare?</h4>
+    <p>For most large countries, GDP and GNP are similar. But for countries with large diaspora populations (like Bangladesh, India, Philippines), <strong>GNP may be more relevant</strong> because it captures remittances sent home by workers abroad — a crucial source of national income not reflected in GDP.</p>
+    <p>However, both measures have limitations as welfare proxies: they ignore income distribution, leisure, environmental degradation, and informal economy activity. Measures like <strong>Human Development Index (HDI)</strong> or <strong>Gross National Happiness (GNH)</strong> may better capture true national welfare.</p>
+  </div>
+</div>
+
+<!-- Q15 -->
+<div class="q-block" id="q15">
+  <div class="q-label">
+    <span class="q-num">Q 15</span>
+    <span class="q-text">Critically analyse how remittances and foreign aid influence GNP in Bangladesh.</span>
+  </div>
+  <div class="answer">
+    <p>Bangladesh's economy offers one of the most compelling global examples of remittance impact on GNP.</p>
+    <h4>Remittances</h4>
+    <p>Bangladesh consistently ranks among the world's top remittance-receiving nations. Millions of Bangladeshi workers in the Middle East, Malaysia, UK, and Italy send money home. Remittances add directly to <strong>GNP</strong> (as NFIA) without necessarily boosting GDP.</p>
+    <ul>
+      <li><strong>Positive effects:</strong> Raises household incomes, reduces poverty, increases domestic consumption and investment, stabilises foreign exchange reserves (helps manage BDT exchange rate).</li>
+      <li><strong>Macroeconomic multiplier:</strong> Remittances spent on goods and services create additional rounds of income generation.</li>
+      <li><strong>Negative/critical effects:</strong> "Dutch disease" risk — large inflows can appreciate the currency, making exports less competitive. Dependency risk — if remittances decline (geopolitical changes in Gulf), the economy is vulnerable. Remittances do not build productive capacity directly.</li>
+    </ul>
+    <h4>Foreign Aid</h4>
+    <p>Unlike remittances, foreign aid does not automatically add to GNP — much of it returns as payments to foreign consultants and procurement of foreign goods.</p>
+    <ul>
+      <li><strong>Positive effects:</strong> Funds infrastructure and social sector development (health, education), builds human capital, and can stimulate long-run growth.</li>
+      <li><strong>Critical effects:</strong> Aid dependency can reduce domestic revenue mobilisation incentives. "Tied aid" conditions may distort national priorities. Corruption can divert benefits away from intended recipients.</li>
+    </ul>
+    <div class="callout"><strong>Overall Assessment:</strong> Remittances are a more reliable and welfare-enhancing contributor to Bangladesh's GNP than foreign aid, because they flow directly to households. However, neither can substitute for domestic productive investment, export growth, and institutional strengthening.</div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<!-- ========== SECTION 3: ENTREPRENEURSHIP ========== -->
+<div class="section-header">
+  <h2>Section Three</h2>
+  <h3>Entrepreneurship &amp; Business Innovation</h3>
+</div>
+
+<div class="content">
+
+<!-- Q16 -->
+<div class="q-block" id="q16">
+  <div class="q-label">
+    <span class="q-num">Q 16</span>
+    <span class="q-text">"Entrepreneurs are born, not made." — Evaluate this statement using examples from modern entrepreneurs.</span>
+  </div>
+  <div class="answer">
+    <p>This statement reflects the <strong>trait theory of entrepreneurship</strong>, which argues that entrepreneurs possess innate personality traits — risk tolerance, vision, creativity, resilience — that predispose them to entrepreneurial success.</p>
+    <h4>Arguments Supporting the Statement</h4>
+    <ul>
+      <li><strong>Natural traits:</strong> Research in psychology identifies certain personality types (high openness, low neuroticism, high conscientiousness) correlated with entrepreneurial success — traits with significant genetic components.</li>
+      <li><strong>Early indicators:</strong> Steve Jobs displayed disruptive curiosity from childhood; Richard Branson showed commercial instinct as a teenager despite dyslexia that formal education failed to accommodate.</li>
+      <li><strong>Intrinsic motivation:</strong> The drive to create, solve, and build — often described as a burning internal need — may be innate rather than learned.</li>
+    </ul>
+    <h4>Arguments Against — Entrepreneurs Can Be Made</h4>
+    <ul>
+      <li><strong>Education and skills:</strong> Business model design, financial literacy, negotiation, and market analysis are taught skills that significantly improve entrepreneurial outcomes.</li>
+      <li><strong>Environment matters:</strong> Silicon Valley's culture of risk-taking and failure tolerance has produced disproportionate entrepreneurial success — showing environment, not just genes, shapes entrepreneurs.</li>
+      <li><strong>Late bloomers:</strong> Ray Kroc (McDonald's founder) became an entrepreneur at age 52. Colonel Sanders founded KFC at 65. These are not "born" entrepreneurs expressing early traits — they developed over decades.</li>
+      <li><strong>Effectuation research:</strong> Saras Sarasvathy's studies of expert entrepreneurs found they use learnable decision-making logic (effectuation), not mystical innate ability.</li>
+    </ul>
+    <div class="callout"><strong>Conclusion:</strong> The statement is an oversimplification. Entrepreneurship is the product of both <em>nature</em> (certain innate predispositions) and <em>nurture</em> (education, experience, environment, mentorship). The modern consensus is that while some traits help, entrepreneurship can substantially be developed — making it "born AND made."</div>
+  </div>
+</div>
+
+<!-- Q17 -->
+<div class="q-block" id="q17">
+  <div class="q-label">
+    <span class="q-num">Q 17</span>
+    <span class="q-text">Critically evaluate whether entrepreneurship can be taught or is primarily driven by innate traits.</span>
+  </div>
+  <div class="answer">
+    <p>This extends Q16 and examines the practical and theoretical evidence for entrepreneurship education.</p>
+    <h4>What Can Be Taught</h4>
+    <ul>
+      <li><strong>Business skills:</strong> Accounting, marketing, operations management, legal compliance — all teachable through formal education.</li>
+      <li><strong>Opportunity recognition:</strong> Frameworks like design thinking, SWOT analysis, and Blue Ocean Strategy train entrepreneurs to spot gaps in markets.</li>
+      <li><strong>Risk management:</strong> Decision trees, scenario planning, and financial modelling help entrepreneurs manage uncertainty systematically.</li>
+      <li><strong>Networking:</strong> Building relationships with investors, mentors, and customers is a learnable social skill.</li>
+      <li><strong>Mindset shift:</strong> Growth mindset (Carol Dweck), resilience training, and exposure to entrepreneurial failure stories can reshape attitudes toward risk and setback.</li>
+    </ul>
+    <h4>What May Be Harder to Teach</h4>
+    <ul>
+      <li>Deep intrinsic motivation and passion for a specific problem domain</li>
+      <li>High risk tolerance beyond a certain threshold</li>
+      <li>Creative "leaps" of imagination in novel situations</li>
+    </ul>
+    <h4>Evidence from Entrepreneurship Education</h4>
+    <p>Studies from Stanford, MIT, and Babson College — which has ranked #1 for entrepreneurship education for decades — show that graduates of structured entrepreneurship programmes launch significantly more businesses and attract more investment than peers without such training.</p>
+    <div class="callout"><strong>Verdict:</strong> Entrepreneurship can be substantially taught. Education cannot implant passion, but it can equip aspiring entrepreneurs with the tools, frameworks, and confidence to channel whatever drive they possess into successful ventures. Innate traits are a starting point — education amplifies them.</div>
+  </div>
+</div>
+
+<!-- Q18 -->
+<div class="q-block" id="q18">
+  <div class="q-label">
+    <span class="q-num">Q 18</span>
+    <span class="q-text">"While there is a problem, there is an opportunity." Elucidate in the light of entrepreneurs seeking business opportunities.</span>
+  </div>
+  <div class="answer">
+    <p>This statement is one of the core principles of entrepreneurial thinking — the ability to reframe problems as <strong>unmet market needs</strong>, and unmet needs as business opportunities.</p>
+    <h4>The Problem-Opportunity Nexus</h4>
+    <p>Every successful business exists because it solved a problem. The entrepreneur's unique skill is not just identifying problems (everyone can do that), but seeing <em>how</em> the problem can be solved profitably and at scale.</p>
+    <h4>Historical Examples</h4>
+    <ul>
+      <li><strong>Uber:</strong> Problem — finding a reliable taxi is frustrating and opaque. Opportunity — use smartphones and GPS to create a seamless ride-hailing platform. Uber is now valued at over $70 billion.</li>
+      <li><strong>Grameen Bank (Bangladesh):</strong> Problem — rural poor have no access to credit. Opportunity — microfinance. Muhammad Yunus created an entirely new banking model, winning a Nobel Prize.</li>
+      <li><strong>Bkash (Bangladesh):</strong> Problem — millions of Bangladeshis are unbanked. Opportunity — mobile financial services. Bkash became one of the world's most successful fintech companies.</li>
+      <li><strong>Airbnb:</strong> Problem — hotel accommodation is expensive and impersonal. Opportunity — monetise spare rooms. Now valued at over $80 billion.</li>
+    </ul>
+    <h4>Systematic Opportunity Identification</h4>
+    <p>Entrepreneurs use several techniques to find problem-based opportunities:</p>
+    <ul>
+      <li><strong>Customer pain point analysis:</strong> Deep listening to understand what frustrates customers</li>
+      <li><strong>Market gap analysis:</strong> Identifying under-served segments</li>
+      <li><strong>Trend scanning:</strong> Emerging demographic, technological, or regulatory changes creating new problems</li>
+      <li><strong>Jobs-To-Be-Done framework:</strong> Understanding the real task customers are trying to accomplish</li>
+    </ul>
+    <div class="callout"><strong>Conclusion:</strong> The most successful entrepreneurs are fundamentally <em>problem obsessives</em>. The statement captures the essence of entrepreneurial opportunity recognition: every complaint, inefficiency, or unmet need in society is a potential business waiting to be built.</div>
+  </div>
+</div>
+
+<!-- Q19 -->
+<div class="q-block" id="q19">
+  <div class="q-label">
+    <span class="q-num">Q 19</span>
+    <span class="q-text">Propose a structured approach to conducting a feasibility study for a new eco-friendly product.</span>
+  </div>
+  <div class="answer">
+    <p>A <strong>feasibility study</strong> assesses whether a proposed business idea is viable before significant resources are committed. For an eco-friendly product, additional environmental dimensions must be incorporated.</p>
+    <h4>Phase 1: Market Feasibility</h4>
+    <ul>
+      <li>Define the target customer segment (eco-conscious millennials, B2B sustainability-driven firms)</li>
+      <li>Estimate market size (TAM, SAM, SOM)</li>
+      <li>Analyse competitors and substitutes</li>
+      <li>Assess consumer willingness-to-pay premium for eco-friendly features</li>
+      <li>Conduct primary research: surveys, focus groups, interviews</li>
+    </ul>
+    <h4>Phase 2: Technical Feasibility</h4>
+    <ul>
+      <li>Assess production processes: Are eco-friendly materials available at scale?</li>
+      <li>Evaluate technology requirements (e.g., biodegradable packaging machinery)</li>
+      <li>Lifecycle Assessment (LCA): Measure carbon footprint, water use, and waste across the product's full life</li>
+      <li>Identify supply chain risks (e.g., availability of sustainable raw materials)</li>
+    </ul>
+    <h4>Phase 3: Financial Feasibility</h4>
+    <ul>
+      <li>Estimate startup costs, CAPEX, and OPEX</li>
+      <li>Project revenue, break-even point, and ROI</li>
+      <li>Identify funding sources: green bonds, ESG investors, government eco-grants</li>
+      <li>Sensitivity analysis: How does profitability change if raw material costs rise?</li>
+    </ul>
+    <h4>Phase 4: Legal and Regulatory Feasibility</h4>
+    <ul>
+      <li>Check environmental compliance requirements (e.g., Bangladesh Environment Act)</li>
+      <li>Assess certification requirements (e.g., ISO 14001, Fair Trade, organic labels)</li>
+      <li>Review IP protection options for eco-innovations</li>
+    </ul>
+    <h4>Phase 5: Organisational Feasibility</h4>
+    <ul>
+      <li>Does the founding team have the skills needed?</li>
+      <li>What partnerships are required (NGOs, sustainability labs, logistics)?</li>
+    </ul>
+    <div class="key-box"><strong>Output:</strong> A comprehensive feasibility report with a GO / NO-GO recommendation supported by data, risk mitigation strategies, and a proposed pilot launch plan.</div>
+  </div>
+</div>
+
+<!-- Q20 -->
+<div class="q-block" id="q20">
+  <div class="q-label">
+    <span class="q-num">Q 20</span>
+    <span class="q-text">Evaluate the effectiveness of brainstorming and design thinking as techniques for generating business ideas.</span>
+  </div>
+  <div class="answer">
+    <h4>Brainstorming</h4>
+    <p>Brainstorming (Osborn, 1953) is a divergent thinking technique where participants generate as many ideas as possible without judgment. Rules: defer judgement, go for quantity, build on others' ideas, welcome wild ideas.</p>
+    <p><strong>Effectiveness:</strong></p>
+    <ul>
+      <li>✅ Fast, low cost, inclusive, democratic</li>
+      <li>✅ Can generate large volumes of ideas quickly</li>
+      <li>❌ "Production blocking" — only one person speaks at a time in groups</li>
+      <li>❌ "Social loafing" — some participants contribute less in groups</li>
+      <li>❌ Groupthink can constrain radical ideas if social dynamics are hierarchical</li>
+      <li>❌ Does not systematically link ideas to customer needs</li>
+    </ul>
+    <h4>Design Thinking</h4>
+    <p>Design thinking (IDEO, Stanford d.school) is a human-centred, structured process for creative problem solving: <strong>Empathise → Define → Ideate → Prototype → Test</strong>.</p>
+    <p><strong>Effectiveness:</strong></p>
+    <ul>
+      <li>✅ Roots ideas in real user needs (empathy phase) — reduces "solutions looking for problems"</li>
+      <li>✅ Iterative prototyping and testing reduces costly failures</li>
+      <li>✅ Multidisciplinary by design — combines business, technology, and human perspectives</li>
+      <li>✅ Has produced major innovations: Apple's Mac GUI, Airbnb's onboarding, NHS patient journey redesign</li>
+      <li>❌ Time-intensive; requires skilled facilitators</li>
+      <li>❌ Can be slow for fast-moving markets</li>
+    </ul>
+    <div class="callout"><strong>Comparative Verdict:</strong> Brainstorming is best as a quick ideation tool within a broader process. Design thinking is more robust for generating commercially viable ideas because it ensures ideas are grounded in user needs and validated before investment. The most effective approach combines both: brainstorm freely, then design-think rigorously.</div>
+  </div>
+</div>
+
+<!-- Q21 -->
+<div class="q-block" id="q21">
+  <div class="q-label">
+    <span class="q-num">Q 21</span>
+    <span class="q-text">Evaluate why some innovative ideas fail due to weak business models.</span>
+  </div>
+  <div class="answer">
+    <p>The graveyard of failed startups is full of genuinely innovative ideas. The problem was rarely the idea itself — it was the <strong>business model</strong>: how the company creates, delivers, and captures value.</p>
+    <h4>What is a Business Model?</h4>
+    <p>A business model defines: Who is the customer? What value is offered? How is value delivered? How does the company make money? Without a sound business model, even the most brilliant idea will fail.</p>
+    <h4>Common Business Model Weaknesses That Kill Innovations</h4>
+    <ul>
+      <li><strong>No clear revenue model:</strong> Many apps gain millions of users but never find a sustainable monetisation strategy. Twitter (now X) struggled for years to turn engagement into profit.</li>
+      <li><strong>Wrong customer segment:</strong> Segway was genuinely innovative — but was marketed to tourists and consumers when its real opportunity was in logistics and warehouse operations.</li>
+      <li><strong>Unscalable unit economics:</strong> If the cost of acquiring a customer exceeds lifetime value (CAC &gt; LTV), growth destroys value. Many food delivery startups collapsed on this basis.</li>
+      <li><strong>Ignoring the distribution problem:</strong> A brilliant product with no pathway to customers fails. Google Glass was technically impressive but had no clear route to mainstream adoption.</li>
+      <li><strong>Misaligned incentives with partners:</strong> If key partners (suppliers, distributors) don't benefit, the model collapses.</li>
+    </ul>
+    <div class="callout"><strong>Case Study:</strong> Quibi (2020) raised $1.75 billion to launch a short-form video platform. The idea (high-quality video in "quick bites") was innovative. But the business model was fatally flawed: premium subscription pricing in a market dominated by free content (TikTok, YouTube), no social sharing, and content that couldn't be viewed on TV. It shut down after 6 months. The idea was not the problem — the business model was.</div>
+    <div class="key-box"><strong>Lesson:</strong> Innovation without a viable business model is philanthropy. Entrepreneurs must design and test their business models with the same rigour they apply to their product or technology.</div>
+  </div>
+</div>
+
+<!-- Q22 -->
+<div class="q-block" id="q22">
+  <div class="q-label">
+    <span class="q-num">Q 22</span>
+    <span class="q-text">Create your own business model for a social startup, identifying key partners, channels, and revenue streams.</span>
+  </div>
+  <div class="answer">
+    <h4>Business Model: "GreenBox BD" — Eco-Friendly Meal Kit Delivery (Bangladesh)</h4>
+    <p><strong>Value Proposition:</strong> Deliver pre-portioned, locally sourced, organic meal kits to urban households in Dhaka and Chittagong, reducing food waste and supporting small-scale farmers.</p>
+    <table>
+      <thead><tr><th>Canvas Element</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Customer Segments</strong></td><td>Urban middle-class families; health-conscious professionals; corporate clients seeking employee benefits</td></tr>
+        <tr><td><strong>Value Propositions</strong></td><td>Fresh local ingredients, zero plastic packaging, reduced food waste, support Bangladeshi farmers, easy cooking (30-min recipes)</td></tr>
+        <tr><td><strong>Channels</strong></td><td>Mobile app (primary), WhatsApp ordering, social media (Instagram/Facebook), word-of-mouth, corporate HR partnerships</td></tr>
+        <tr><td><strong>Customer Relationships</strong></td><td>Subscription model (weekly/monthly), personalised meal plans, loyalty programme, community cooking events</td></tr>
+        <tr><td><strong>Revenue Streams</strong></td><td>Weekly subscription (BDT 1,500–3,500/week), corporate meal plans, premium organic add-ons, cooking class revenue</td></tr>
+        <tr><td><strong>Key Resources</strong></td><td>Cold-chain logistics, farmer network, recipe development team, app technology, brand trust</td></tr>
+        <tr><td><strong>Key Activities</strong></td><td>Sourcing, quality control, packaging, delivery logistics, marketing, farmer training</td></tr>
+        <tr><td><strong>Key Partners</strong></td><td>Small-scale organic farmers (30+ from northern Bangladesh), BGMEA (corporate clients), BRAC (social impact certification), local NGOs, Pathao (delivery), Nagad/Bkash (payments)</td></tr>
+        <tr><td><strong>Cost Structure</strong></td><td>Ingredients (40%), logistics (25%), packaging (10%), technology (10%), marketing (10%), staff (5%)</td></tr>
+        <tr><td><strong>Social Impact</strong></td><td>Income for 500+ small farmers, 30% food waste reduction, carbon-footprint-labelled meals</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Q23 -->
+<div class="q-block" id="q23">
+  <div class="q-label">
+    <span class="q-num">Q 23</span>
+    <span class="q-text">Critically analyse how each of the five principles of effectuation helps entrepreneurs deal with uncertainty and limited resources.</span>
+  </div>
+  <div class="answer">
+    <p>Effectuation (Saras Sarasvathy, 2001) is a decision-making logic used by expert entrepreneurs when operating under uncertainty. It contrasts with <em>causation</em> (goal-first planning) by starting with available means and building toward emergent goals.</p>
+    <h4>The Five Principles</h4>
+    <table>
+      <thead>
+        <tr><th>Principle</th><th>Core Idea</th><th>How It Addresses Uncertainty/Resource Constraints</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Bird-in-Hand</strong><br><em>(Who am I? What do I know? Whom do I know?)</em></td>
+          <td>Start with available means, not a fixed goal</td>
+          <td>Eliminates the need for upfront market research or capital by leveraging existing skills and networks. Example: A chef starts a restaurant with current culinary skills, not after raising millions.</td>
+        </tr>
+        <tr>
+          <td><strong>2. Affordable Loss</strong><br><em>(How much am I willing to lose?)</em></td>
+          <td>Limit downside risk rather than maximise expected return</td>
+          <td>Under uncertainty, ROI projections are unreliable. Affordable loss keeps entrepreneurs in the game when things go wrong, protecting against fatal losses. Bootstrapping is a direct application.</td>
+        </tr>
+        <tr>
+          <td><strong>3. Crazy Quilt</strong><br><em>(Partnerships = commitments)</em></td>
+          <td>Build partnerships proactively; let committed stakeholders co-create the venture</td>
+          <td>Each partner brings resources (funding, distribution, expertise) that reduce the founder's resource burden. Partnerships also validate the idea — if no one will partner, the market signal is negative.</td>
+        </tr>
+        <tr>
+          <td><strong>4. Lemonade</strong><br><em>(Turn surprises into opportunities)</em></td>
+          <td>Embrace and exploit unexpected events</td>
+          <td>In uncertain environments, surprises are inevitable. Rather than treating them as failures, effectuators mine them for new opportunities. (See Q25 for deeper exploration)</td>
+        </tr>
+        <tr>
+          <td><strong>5. Pilot-in-the-Plane</strong><br><em>(Co-create the future)</em></td>
+          <td>The future is not predicted — it is constructed through action</td>
+          <td>Rather than forecasting an uncertain future, entrepreneurs act to <em>create</em> it. This mindset liberates them from paralysis-by-analysis and empowers decisive, iterative action.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout"><strong>Critical Evaluation:</strong> Effectuation is powerful in early-stage, high-uncertainty contexts. However, as ventures grow and seek institutional investment, causal logic (business plans, financial projections, KPIs) becomes necessary. The most sophisticated entrepreneurs blend both logics — effectuating to start, then causating to scale.</div>
+  </div>
+</div>
+
+<!-- Q24 -->
+<div class="q-block" id="q24">
+  <div class="q-label">
+    <span class="q-num">Q 24</span>
+    <span class="q-text">You are launching a new food delivery app — how would you identify and protect your intellectual property assets?</span>
+  </div>
+  <div class="answer">
+    <p>Intellectual Property (IP) is often the most valuable asset of a tech startup. For a food delivery app, identifying and protecting IP requires a systematic approach.</p>
+    <h4>Step 1: IP Audit — Identifying What You Own</h4>
+    <table>
+      <thead><tr><th>IP Type</th><th>What It Covers in a Food App</th><th>Protection Method</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Software Copyright</strong></td><td>App source code, algorithms, UI/UX design, database structure</td><td>Automatic on creation (no registration needed); document creation dates; use code repositories with timestamps</td></tr>
+        <tr><td><strong>Trademark</strong></td><td>Brand name, logo, tagline, distinctive app icon</td><td>Register with DPDT (Bangladesh) or WIPO for international protection; monitor for infringement</td></tr>
+        <tr><td><strong>Patent</strong></td><td>Novel algorithms (e.g., unique delivery route optimisation), innovative matching logic between orders and riders</td><td>File patent application if technology is genuinely novel and non-obvious; costly but provides 20-year protection</td></tr>
+        <tr><td><strong>Trade Secret</strong></td><td>Pricing algorithms, data analytics models, restaurant acquisition strategy, customer segmentation models</td><td>NDAs with employees and partners; access controls; confidentiality policies; no public disclosure</td></tr>
+        <tr><td><strong>Domain &amp; Social Handles</strong></td><td>Website domain, Instagram/Facebook/TikTok usernames</td><td>Register early, before launch, in all relevant markets</td></tr>
+      </tbody>
+    </table>
+    <h4>Step 2: Protection Measures</h4>
+    <ul>
+      <li><strong>Employment agreements:</strong> Ensure all employees sign IP assignment clauses — any IP created during employment belongs to the company.</li>
+      <li><strong>Contractor agreements:</strong> Freelance developers must assign IP rights explicitly (unlike employees, freelancers own what they create by default).</li>
+      <li><strong>Terms of Service &amp; Privacy Policy:</strong> Legally protect user-generated data and reviews.</li>
+      <li><strong>Regular IP audits:</strong> As the app evolves, continuously identify new IP and ensure it is protected.</li>
+    </ul>
+    <div class="callout"><strong>Strategic Note:</strong> For a Bangladeshi food delivery startup, trademark and trade secret protection are the most immediately valuable and cost-effective. Patent protection should be pursued only for genuinely novel technical innovations, as it is expensive and time-consuming.</div>
+  </div>
+</div>
+
+<!-- Q25 -->
+<div class="q-block" id="q25">
+  <div class="q-label">
+    <span class="q-num">Q 25</span>
+    <span class="q-text">An unexpected market change disrupts your initial product idea. How can you apply the "lemonade" principle to turn this into an opportunity?</span>
+  </div>
+  <div class="answer">
+    <p>The <strong>Lemonade Principle</strong> (the 4th principle of effectuation) takes its name from the proverb: "When life gives you lemons, make lemonade." In entrepreneurial terms, it means that when an unexpected event disrupts your plan, instead of treating it purely as a problem, you actively seek the new opportunity it creates.</p>
+    <h4>The Lemonade Logic Applied: Food Delivery App Scenario</h4>
+    <p><strong>Original Plan:</strong> Launch a premium restaurant food delivery app targeting high-income customers in Dhaka.</p>
+    <p><strong>Market Disruption:</strong> A major incumbent (Pathao Food / Shohoz) announces a massive discount campaign, making price competition untenable for a new entrant.</p>
+    <h4>Causation Response (Old Thinking)</h4>
+    <p>Treat this as a threat, delay launch, seek more funding to compete on price, or abandon the idea. This leads to paralysis or failure.</p>
+    <h4>Lemonade Response (Effectuation Thinking)</h4>
+    <ul>
+      <li><strong>Reframe the disruption:</strong> The incumbents are fighting a price war — which means they are abandoning service quality and niche focus.</li>
+      <li><strong>Find the hidden opportunity:</strong> Pivot to an underserved niche the incumbents now care less about — e.g., <em>healthy meal kit delivery</em> for health-conscious consumers, or <em>corporate office lunch packages</em>.</li>
+      <li><strong>Use the competitor's weakness:</strong> If the big players are cutting costs, their service quality may suffer. Position the new app on premium service, reliability, and local restaurant exclusivity.</li>
+    </ul>
+    <h4>Real-World Examples of Lemonade Principle</h4>
+    <ul>
+      <li><strong>Slack:</strong> Built as an internal chat tool for a gaming startup (Glitch) that failed. The unexpected closure of Glitch gave the team the freedom to pivot to Slack, which became a $27 billion company.</li>
+      <li><strong>Instagram:</strong> Originally a location check-in app (Burbn). The team noticed users only loved the photo-sharing feature. They stripped everything else and pivoted — creating one of the world's most-used platforms.</li>
+      <li><strong>Post-it Notes (3M):</strong> Invented accidentally when a weak adhesive was created that could not hold things permanently. Instead of discarding it, a researcher used it as a bookmark. The "failure" became a billion-dollar product.</li>
+    </ul>
+    <div class="callout"><strong>Conclusion:</strong> The Lemonade Principle teaches entrepreneurs that <em>there are no surprises, only data</em>. Every unexpected event is new information about the market. Entrepreneurs who master this principle build venture resilience, adaptability, and competitive advantage that purely analytical planners cannot replicate. The disruption is not the end of your plan — it is the beginning of a better one.</div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<!-- FOOTER -->
+<footer>
+  <p>ECONOMICS &amp; ENTREPRENEURSHIP STUDY GUIDE &nbsp;|&nbsp; ALL 25 QUESTIONS ANSWERED &nbsp;|&nbsp; GOOD LUCK ON YOUR EXAM ✦</p>
+</footer>
+
+<script>
+// Smooth scroll for TOC links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
